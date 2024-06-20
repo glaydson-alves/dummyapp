@@ -1,14 +1,15 @@
 export interface IPost {
-    id: Number,
-    title: string,
-    body: string,
-    tags: string,
-    views: number,
-    userId: number,
-    reactions?: reactions | string 
-}
-
-export interface reactions {
-    likes: Number,
-    dislikes: Number,
-}
+    id: number
+    title: string
+    body: string
+    tags: string[]
+    reactions?: Reactions
+    views: number
+    userId: number
+  }
+  
+  export interface Reactions {
+    likes: number
+    dislikes: number
+  }
+  

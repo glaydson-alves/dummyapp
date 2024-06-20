@@ -9,10 +9,10 @@ import { IPost } from '../interfaces/Ipost';
 })
 export class PostService {
   
-  BASEURL: string = environment.apiUrl
+  private BASEURL = environment.apiUrl
   constructor(private http: HttpClient) { }
 
-  loadingPost(){
+  loadingPost(): Observable<object>{
     return this.http.get(`${this.BASEURL}/posts`);
   }
 

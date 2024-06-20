@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './quotes.page';
-import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
 import { Tab2PageRoutingModule } from './quotes-routing.module';
 
@@ -12,7 +11,6 @@ import { Tab2PageRoutingModule } from './quotes-routing.module';
     IonicModule,
     CommonModule,
     FormsModule,
-    ExploreContainerComponentModule,
     Tab2PageRoutingModule
   ],
   declarations: [Tab2Page]
