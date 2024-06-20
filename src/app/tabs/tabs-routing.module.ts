@@ -9,15 +9,15 @@ const routes: Routes = [
     children: [
       {
         path: 'tab1',
-        loadChildren: () => import('../views/posts/tab1.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../views/posts/posts.module').then(m => m.Tab1PageModule)
       },
       {
         path: 'tab2',
-        loadChildren: () => import('../views/quotes/tab2.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('../views/quotes/quotes.module').then(m => m.Tab2PageModule)
       },
       {
         path: 'tab3',
-        loadChildren: () => import('../views/users/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('../views/users/users.module').then(m => m.Tab3PageModule)
       },
       {
         path: '',
