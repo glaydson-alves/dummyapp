@@ -13,11 +13,11 @@ const routes: Routes = [
       },
       {
         path: 'quotes',
-        loadChildren: () => import('../views/quotes/quotes.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('../views/quotes/quotes.module').then(m => m.QuotesPageModule)
       },
       {
         path: 'users',
-        loadChildren: () => import('../views/users/users.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('../views/users/users.module').then(m => m.UsersPageModule)
       },
       {
         path: '',

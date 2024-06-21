@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { Tab2Page } from './quotes.page';
+import { Routes, RouterModule } from '@angular/router';
+
+import { QuotesPage } from './quotes.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: Tab2Page,
+    component: QuotesPage
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class Tab2PageRoutingModule {}
+export class QuotesPageRoutingModule {}
