@@ -10,17 +10,19 @@ import { UserService } from 'src/app/services/user.service';
 export class UsersPage implements OnInit {
 
   users: Array<IUser> = []
-
+  public loaded = false;
   constructor( private userService: UserService) { }
 
   ngOnInit() {
     this.loadUsers()
   }
   loadUsers(){
+    this.loaded = true;
     return this.userService.loadingUsers().subscribe((res: any) =>{
       const { users } = res
       this.users = users
-      console.log(this.users)
+      // console.log(this.users)
+      this.loaded = false;
     })
   }
 }

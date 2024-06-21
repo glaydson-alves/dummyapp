@@ -8,7 +8,7 @@ import { QuoteService } from 'src/app/services/quote.service';
   styleUrls: ['./quotes.page.scss'],
 })
 export class QuotesPage implements OnInit {
-  
+  public loaded = false;
   constructor( private quoteService: QuoteService) { }
   
   quotes: Array<IQuotes> = []
@@ -17,10 +17,12 @@ export class QuotesPage implements OnInit {
   }
 
   loadQuote(){
+    this.loaded = true;
     this.quoteService.loadingQuotes().subscribe((res: any) =>{
       const { quotes } = res
       this.quotes = quotes
       // console.log(res)
+      this.loaded = false;
     })
   }
 

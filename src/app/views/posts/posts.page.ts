@@ -9,17 +9,20 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class PostsPage implements OnInit {
   posts: Array<IPost> = []
+  public loaded = false;
   constructor(private postService: PostService) { }
 
   ngOnInit() {
     this.loadPosts()
   }
-
+  
   loadPosts(){
+    this.loaded = true;
     this.postService.loadingPost().subscribe((res: any) => {
       const { posts } = res; 
       this.posts = posts;
       // console.log(post)
+      this.loaded = false;
     })
   }
 

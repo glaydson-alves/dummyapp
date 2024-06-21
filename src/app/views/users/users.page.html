@@ -6,25 +6,43 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let user of users">
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <!-- <ion-avatar slot="start"> -->
-              <ion-thumbnail>
-              <img [alt]="user.firstName" [src]="user.image" />
-              </ion-thumbnail>
-            <!-- </ion-avatar> -->
-          </ion-col>
+    <ion-list *ngIf="loaded">
+      <ion-item *ngFor="let item of [].constructor(15)">
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <p>
+            <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+          </p>
+        </ion-label>        
+      </ion-item>
+    </ion-list>
 
-          <ion-col size="10">
-            <ion-label>{{user.firstName}} {{user.lastName}}</ion-label>
-            <ion-label>{{user.email}}</ion-label>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      
-    </ion-item>
+    <ion-list *ngIf="!loaded">
+      <ion-item *ngFor="let user of users">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <!-- <ion-avatar slot="start"> -->
+                <ion-thumbnail>
+                <img [alt]="user.firstName" [src]="user.image" />
+                </ion-thumbnail>
+              <!-- </ion-avatar> -->
+            </ion-col>
+
+            <ion-col size="10">
+              <ion-label>{{user.firstName}} {{user.lastName}}</ion-label>
+              <ion-label>{{user.email}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        
+      </ion-item>
+    </ion-list>
   </ion-list>
   
 </ion-content>
