@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>posts</ion-title>
+    <ion-title>Posts</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,21 +10,21 @@
       <ion-grid>
         <ion-row>
 
-          <ion-col>
+          <ion-col class="container-thumbnail">
             <ion-thumbnail>
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+              <img alt="imagem aleatória" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
             </ion-thumbnail>
           </ion-col>
 
-          <ion-col size="8">
+          <ion-col size="8" class="container">
             <ion-label>{{post.title}}</ion-label>
 
-            <ion-label>
-              <ion-icon name="heart-outline"></ion-icon> <span>{{post.reactions?.likes}}</span>
+            <ion-label class="container-child">
+              <ion-icon name="heart-outline"></ion-icon><span>{{post.reactions?.likes}}</span>
               <ion-icon name="thumbs-down-outline"></ion-icon> <span>{{post.reactions?.dislikes}}</span>
             </ion-label>
 
-            <ion-label>
+            <ion-label class="container-child">
               <ion-badge *ngFor="let tag of post.tags" color="tertiary">{{tag}}</ion-badge>
             </ion-label>
 

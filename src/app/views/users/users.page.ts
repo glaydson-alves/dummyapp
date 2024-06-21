@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IUser } from 'src/app/interfaces/Iuser';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-users',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersPage implements OnInit {
 
-  constructor() { }
+  users: Array<IUser> = []
+
+  constructor( private userService: UserService) { }
 
   ngOnInit() {
+    this.loadUsers()
   }
-
+  loadUsers(){
+    return this.userService.loadingUsers().subscribe((res: any) =>{
+      const { users } = res
+      this.users = users
+      console.log(this.users)
+    })
+  }
 }

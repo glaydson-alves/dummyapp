@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-child{
+    display: flex;
+    gap: 10px;
+}
+
+.container-thumbnail{
+    display: flex;
+    align-items: center;
+}
