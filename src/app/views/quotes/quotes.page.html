@@ -1,13 +1,18 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>quotes</ion-title>
+    <ion-title>Quotes</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">quotes</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list>
+    <ion-list *ngFor="let item of quotes">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{item.author}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>{{item.quote}}</ion-card-content>
+      </ion-card>
+    </ion-list>
+  </ion-list>
 </ion-content>
