@@ -20,7 +20,7 @@ const routes: Routes = [
         loadChildren: () => import('../views/users/users.module').then(m => m.UsersPageModule)
       },
       {
-        path: 'users/details/',
+        path: 'users/details/:id',
         loadChildren: () => import('../views/details/details.module').then(m => m.DetailsPageModule)
       },
       {

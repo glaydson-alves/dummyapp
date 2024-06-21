@@ -33,7 +33,7 @@ export class UsersPage implements OnInit {
     })
   }
   userDetails(){
-    alert(this.users.values)
+    alert()
     const navigation: NavigationExtras = {state: { userdetails: this.users }}
     console.log(navigation)
     this.router.navigate([`users/details`], navigation)
