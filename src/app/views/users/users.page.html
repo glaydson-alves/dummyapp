@@ -23,15 +23,13 @@
     </ion-list>
 
     <ion-list *ngIf="!loaded">
-      <ion-item *ngFor="let user of users">
+      <ion-item *ngFor="let user of users" (click)="userDetails()">
         <ion-grid>
           <ion-row>
             <ion-col>
-              <!-- <ion-avatar slot="start"> -->
-                <ion-thumbnail>
-                <img [alt]="user.firstName" [src]="user.image" />
-                </ion-thumbnail>
-              <!-- </ion-avatar> -->
+              <ion-thumbnail>
+              <img [alt]="user.firstName" [src]="user.image" />
+              </ion-thumbnail>
             </ion-col>
 
             <ion-col size="10">

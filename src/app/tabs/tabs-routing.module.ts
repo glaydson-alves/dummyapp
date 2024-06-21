@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('../views/users/users.module').then(m => m.UsersPageModule)
       },
       {
+        path: 'users/details/',
+        loadChildren: () => import('../views/details/details.module').then(m => m.DetailsPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/posts',
         pathMatch: 'full'
