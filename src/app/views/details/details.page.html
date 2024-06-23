@@ -1,9 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>*Users*</ion-title>
+    <ion-title>{{user.firstName}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
- 
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail>
+        <img [alt]="user.firstName" [src]="user.image" />
+      </ion-thumbnail>
+    </ion-item>
+    <ion-item>
+      <ion-label><p>nome: {{user.firstName}}</p></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><p>sobrenome: {{user.lastName}}</p></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><p>idade: {{user.age}}</p></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><p>email: {{user.email}}</p></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><p>aniversário: {{user.birthDate}}</p></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><p>telefone: {{user.phone}}</p></ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

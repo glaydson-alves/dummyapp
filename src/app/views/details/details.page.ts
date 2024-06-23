@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -7,10 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsPage implements OnInit {
 
-  constructor() { }
+  user: any = {};
+
+  constructor( private router: Router) {
+    // const navigation = this.router.getCurrentNavigation();
+    // if (navigation?.extras?.state) {
+    //   this.user = navigation.extras.state['user'];
+    //   console.log('dados do usuarios recebidos', this.user);
+    // } else { console.log('dados não encontrados')}
+
+    const detailsUser = this.router.getCurrentNavigation()?.extras.state as any;
+    this.user = detailsUser['user'];
+
+    // const navigation = this.router.getCurrentNavigation();
+    // this.user.navigation?.extras.state?.user;
+  }
 
   ngOnInit() {
     ;
+    // if(!this.user){
+    //   this.router.navigate(['users'])
+    // }
   }
 
 }

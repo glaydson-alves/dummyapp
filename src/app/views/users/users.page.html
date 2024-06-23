@@ -18,12 +18,12 @@
           <p>
             <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
           </p>
-        </ion-label>        
+        </ion-label>
       </ion-item>
     </ion-list>
 
     <ion-list *ngIf="!loaded">
-      <ion-item *ngFor="let user of users" (click)="userDetails()">
+      <ion-item *ngFor="let user of users" (click)="userDetails(user)">
         <ion-grid>
           <ion-row>
             <ion-col>
@@ -38,9 +38,9 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-        
+
       </ion-item>
     </ion-list>
   </ion-list>
-  
+
 </ion-content>

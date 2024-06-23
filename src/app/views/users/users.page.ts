@@ -15,7 +15,7 @@ export class UsersPage implements OnInit {
 
   // idUser = this.activateRoute.snapshot.paramMap.get(user)
 
-  constructor( private userService: UserService, private router:Router, private route: ActivatedRoute) { 
+  constructor( private userService: UserService, private router:Router, private route: ActivatedRoute) {
     this.router.getCurrentNavigation()
   }
 
@@ -32,10 +32,10 @@ export class UsersPage implements OnInit {
       this.loaded = false;
     })
   }
-  userDetails(){
-    alert()
-    const navigation: NavigationExtras = {state: { userdetails: this.users }}
+  userDetails(user: any){
+    // alert()
+    const navigation: NavigationExtras = {state: { user }}
     console.log(navigation)
-    this.router.navigate([`users/details`], navigation)
+    this.router.navigate(['details'], navigation)
   }
 }
