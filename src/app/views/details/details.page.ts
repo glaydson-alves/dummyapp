@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-details',
@@ -10,7 +11,7 @@ export class DetailsPage implements OnInit {
 
   user: any = {};
 
-  constructor( private router: Router) {
+  constructor( private router: Router, private location: Location) {
     // const navigation = this.router.getCurrentNavigation();
     // if (navigation?.extras?.state) {
     //   this.user = navigation.extras.state['user'];
@@ -25,10 +26,13 @@ export class DetailsPage implements OnInit {
   }
 
   ngOnInit() {
-    ;
-    // if(!this.user){
+        // if(!this.user){
     //   this.router.navigate(['users'])
     // }
+   ;
+  }
+  back(): void {
+    this.location.back();
   }
 
 }

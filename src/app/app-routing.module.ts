@@ -9,7 +9,8 @@ const routes: Routes = [
   {
     path: 'posts',
     loadChildren: () => import('./views/posts/posts.module').then( m => m.PostsPageModule)
-  },  {
+  },
+  {
     path: 'quotes',
     loadChildren: () => import('./views/quotes/quotes.module').then( m => m.QuotesPageModule)
   },
@@ -18,7 +19,7 @@ const routes: Routes = [
     loadChildren: () => import('./views/users/users.module').then( m => m.UsersPageModule)
   },
   {
-    path: 'details',
+    path: 'users/details',
     loadChildren: () => import('./views/details/details.module').then( m => m.DetailsPageModule)
   }
 
