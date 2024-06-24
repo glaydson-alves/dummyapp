@@ -15,7 +15,7 @@ export class UsersPage implements OnInit {
 
   // idUser = this.activateRoute.snapshot.paramMap.get(user)
 
-  constructor( private userService: UserService, private router:Router, private route: ActivatedRoute) {
+  constructor( private userService: UserService, private router:Router) {
     this.router.getCurrentNavigation()
   }
 
